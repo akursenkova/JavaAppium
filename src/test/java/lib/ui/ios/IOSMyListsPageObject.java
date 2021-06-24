@@ -2,6 +2,7 @@ package lib.ui.ios;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.MyListsPageObject;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class IOSMyListsPageObject extends MyListsPageObject {
 
@@ -12,7 +13,7 @@ public class IOSMyListsPageObject extends MyListsPageObject {
         //ARTICLE_TITLE = "org.wikipedia:id/view_page_title_text";
     }
 
-    public IOSMyListsPageObject (AppiumDriver driver){
+    public IOSMyListsPageObject (RemoteWebDriver driver){
         super(driver);
     }
 }

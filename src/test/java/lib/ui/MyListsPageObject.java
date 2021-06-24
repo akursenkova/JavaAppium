@@ -1,11 +1,9 @@
 package lib.ui;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.touch.offset.PointOption;
 import lib.Platform;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 abstract public class MyListsPageObject extends MainPageObject{
 
@@ -24,7 +22,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         return ARTICLE_BY_TITLE_TPL.replace("{TITLE}", article_title);
     }
 
-    public MyListsPageObject(AppiumDriver driver){
+    public MyListsPageObject(RemoteWebDriver driver){
         super(driver);
     }
 
