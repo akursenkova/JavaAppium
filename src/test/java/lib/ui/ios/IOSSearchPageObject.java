@@ -15,7 +15,6 @@ public class IOSSearchPageObject extends SearchPageObject {
         SEARCH_RESULT_ELEMENT = "xpath://XCUIElementTypeCell";
         SEARCH_EMPTY_RESULT_ELEMENT = "id:No results found";
         //SEARCH_EMPTY_RESULT_ELEMENT = "xpath://XCUIElementTypeStaticText[@name='No results found']";
-        SEARCH_RESULT_BY_TWO_SUBSTRINGS_TPL = "xpath://*[contains(@resource-id, 'org.wikipedia:id/page_list_item_container')]//*[contains(@text, '{TITLE}')]/../*[contains(@text, '{DESCRIPTION}')]";
         SEARCH_RESULT_BY_TWO_SUBSTRINGS_TPL = "xpath://XCUIElementTypeStaticText[contains(@name, '{TITLE}')]/../XCUIElementTypeStaticText[contains(@name, '{DESCRIPTION}')]";
     }
 

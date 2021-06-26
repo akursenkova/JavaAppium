@@ -34,7 +34,7 @@ public class CoreTestCase extends TestCase {
             AppiumDriver driver = (AppiumDriver) this.driver;
             driver.rotate(ScreenOrientation.PORTRAIT);
         } else {
-            System.out.println("Method rotateScreenPortrait() does nothing for platform " + Platform.getInstance().isMW());
+            System.out.println("Method rotateScreenPortrait() does nothing for platform " + Platform.getInstance().getPlatformVar());
         }
     }
 
@@ -43,7 +43,7 @@ public class CoreTestCase extends TestCase {
             AppiumDriver driver = (AppiumDriver) this.driver;
             driver.rotate(ScreenOrientation.LANDSCAPE);
         } else {
-            System.out.println("Method rotateScreenLandscape() does nothing for platform " + Platform.getInstance().isMW());
+            System.out.println("Method rotateScreenLandscape() does nothing for platform " + Platform.getInstance().getPlatformVar());
         }
     }
 
@@ -52,7 +52,7 @@ public class CoreTestCase extends TestCase {
             AppiumDriver driver = (AppiumDriver) this.driver;
             driver.runAppInBackground(Duration.ofMillis(millis));
         } else {
-            System.out.println("Method backgroundApp() does nothing for platform " + Platform.getInstance().isMW());
+            System.out.println("Method backgroundApp() does nothing for platform " + Platform.getInstance().getPlatformVar());
         }
 
     }
@@ -69,7 +69,7 @@ public class CoreTestCase extends TestCase {
         if(Platform.getInstance().isMW()) {
             driver.get("http://en.m.wikipedia.org");
         } else {
-            System.out.println("Method openWikiWebPageForMobileWeb() does nothing for platform " + Platform.getInstance().isMW());
+            System.out.println("Method openWikiWebPageForMobileWeb() does nothing for platform " + Platform.getInstance().getPlatformVar());
         }
     }
 
