@@ -21,6 +21,7 @@ abstract public class ArticlePageObject extends MainPageObject{
         OPTIONS_SIMILAR_PAGES,
         OPTIONS_ADD_TO_MY_LIST,
         OPTIONS_FONT_AND_THEME,
+        OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
 
         ADD_TO_MY_LIST_OVERLAY,
         MY_LIST_NAME_INPUT,
@@ -119,7 +120,25 @@ abstract public class ArticlePageObject extends MainPageObject{
     }
 
     public void addArticleToMySaved(){
-        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST, "Cannot find option to add article to my list", 5);
+        if (Platform.getInstance().isMW()){
+            this.removeArticleFromSaved();
+        }
+        this.waitForElementPresent(OPTIONS_ADD_TO_MY_LIST, "Cannot find option to add article to my list", 5);
+        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST, "Cannot find option to add article to my list", 10);
+    }
+
+    public void removeArticleFromSaved(){
+        if (this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)){
+            this.waitForElementAndClick(
+                    OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
+                    "Cannot click button to remove an article from saved",
+                    1
+            );
+            this.waitForElementPresent(
+                    OPTIONS_ADD_TO_MY_LIST,
+                    "Cannot find button to add an article to saved list after removing it from this list before"
+            );
+        }
     }
 
     public void closeArticle(){

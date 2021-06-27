@@ -12,7 +12,8 @@ abstract public class MyListsPageObject extends MainPageObject{
             ARTICLE_BY_TITLE_TPL,
             ARTICLE_TITLE,
             CLOSE_ALERT_BUTTON,
-            DELETE_ARTICLE_BUTTON;
+            DELETE_ARTICLE_BUTTON,
+            REMOVE_FROM_SAVED_BUTTON;
 
     private static String getFolderXpathByName(String name_of_folder){
         return FOLDER_BY_NAME_TPL.replace("{FOLDER_NAME}", name_of_folder);
@@ -20,6 +21,10 @@ abstract public class MyListsPageObject extends MainPageObject{
 
     private static String getSavedArticleXpathByTitle(String article_title){
         return ARTICLE_BY_TITLE_TPL.replace("{TITLE}", article_title);
+    }
+
+    private static String getRemoveButtonByTitle(String article_title){
+        return REMOVE_FROM_SAVED_BUTTON.replace("{TITLE}", article_title);
     }
 
     public MyListsPageObject(RemoteWebDriver driver){
@@ -50,14 +55,29 @@ abstract public class MyListsPageObject extends MainPageObject{
     public void swipeByArticleToDelete(String article_title){
         this.waitForArticleToAppear(article_title);
         String article_xpath = getSavedArticleXpathByTitle(article_title);
-        this.swipeElementToLeft(
-                article_xpath,
-                "Cannot find saved article"
-        );
+
+        if (Platform.getInstance().isIOS() || Platform.getInstance().isAndroid()){
+            this.swipeElementToLeft(
+                    article_xpath,
+                    "Cannot find saved article"
+            );
+        } else {
+            String remove_locator = getRemoveButtonByTitle(article_title);
+            this.waitForElementAndClick(
+                    remove_locator,
+                    "Cannot click button to remove article from saved",
+                    10
+            );
+        }
 
         if (Platform.getInstance().isIOS()){
             this.waitForElementAndClick(DELETE_ARTICLE_BUTTON, "Cannot find and click delete button", 5);
         }
+
+        if (Platform.getInstance().isMW()){
+            driver.navigate().refresh();
+        }
+
         this.waitForArticleToDisappear(article_title);
     }
 
