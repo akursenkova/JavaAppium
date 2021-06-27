@@ -10,6 +10,10 @@ import org.junit.Test;
 
 public class HomeWork extends CoreTestCase {
 
+    private static final String
+            login = "akursenkova",
+            password = "";
+
     //Ex 2
     @Test
     public void testSearchInputContainsText(){
@@ -46,9 +50,9 @@ public class HomeWork extends CoreTestCase {
     }
 
 
-    //Ex 5. Added adaptation for iOS
+    //Ex 5. Added adaptation for iOS and mobile web
     @Test
-    public void testSaveArticlesToList(){
+    public void testSaveArticlesToList() throws InterruptedException {
 
         String first_article = "Object-oriented programming language";
         String first_article_title = "Java (programming language)";
@@ -68,10 +72,23 @@ public class HomeWork extends CoreTestCase {
         if (Platform.getInstance().isAndroid()){
             ArticlePageObject.addArticleToMyList(name_of_folder);
             ArticlePageObject.closeArticle();
-        } else {
+        } else if (Platform.getInstance().isIOS()){
             ArticlePageObject.addArticleToMySaved();
             ArticlePageObject.closeArticle();
             SearchPageObject.clickCancelSearch();
+        } else {
+            ArticlePageObject.addArticleToMySaved();
+            AuthorizationPageObject Auth = new AuthorizationPageObject(driver);
+            Auth.clickAuthButton();
+            Auth.enterLoginData(login, password);
+            Auth.submitForm();
+
+            ArticlePageObject.waitForTitleElement();
+
+            assertEquals("We are not on the same page after login",
+                    first_article_title,
+                    ArticlePageObject.getArticleTitle()
+            );
         }
 
         SearchPageObject.initSearchInput();
@@ -87,20 +104,25 @@ public class HomeWork extends CoreTestCase {
             ArticlePageObject.waitForTitleElement();
             ArticlePageObject.addArticleToExistingList(name_of_folder);
             ArticlePageObject.closeArticle();
-        } else {
+        } else if (Platform.getInstance().isIOS()){
             ArticlePageObject.addArticleToMySaved();
             ArticlePageObject.closeArticle();
             SearchPageObject.clickCancelSearch();
+        } else {
+            ArticlePageObject.addArticleToMySaved();
         }
 
         NavigationUI NavigationUI = NavigationUIFactory.get(driver);
+        NavigationUI.openNavigation();
         NavigationUI.clickMyList();
 
         MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
 
         if (Platform.getInstance().isIOS()){
             MyListsPageObject.closeAlertSyncArticles();
-        } else {
+        }
+
+        if (Platform.getInstance().isAndroid()){
             MyListsPageObject.openFolderByName(name_of_folder);
         }
 
