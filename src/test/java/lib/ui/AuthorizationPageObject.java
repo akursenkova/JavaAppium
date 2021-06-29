@@ -15,7 +15,7 @@ public class AuthorizationPageObject extends MainPageObject{
         super(driver);
     }
 
-    @Step("Click '{LOGIN_BUTTON}' button")
+    @Step("Click 'Log in' button")
     public void clickAuthButton() throws InterruptedException{
         this.waitForElementPresent(LOGIN_BUTTON, "Cannot find auth button", 10);
         Thread.sleep(1000);

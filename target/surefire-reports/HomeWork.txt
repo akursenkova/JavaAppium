@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: tests.ArticleTests
+Test set: HomeWork
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.274 s - in tests.ArticleTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.618 s - in HomeWork

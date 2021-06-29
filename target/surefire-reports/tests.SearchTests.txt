@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+Test set: tests.SearchTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 49.701 s <<< FAILURE! - in tests.SearchTests
+testAmountOfNotEmptySearch(tests.SearchTests)  Time elapsed: 21.418 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: Cannot find anything by the request
+ (tried for 15 second(s) with 500 milliseconds interval)
+	at tests.SearchTests.testAmountOfNotEmptySearch_aroundBody4(SearchTests.java:58)
+	at tests.SearchTests.testAmountOfNotEmptySearch(SearchTests.java:54)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element using By.cssSelector: ui.page-list>li.page-summary
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'Macbook-Air-2.local', ip: 'fe80:0:0:0:10a2:bd7f:8a2:9972%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_292'
+Driver info: driver.version: unknown
+	at tests.SearchTests.testAmountOfNotEmptySearch_aroundBody4(SearchTests.java:58)
+	at tests.SearchTests.testAmountOfNotEmptySearch(SearchTests.java:54)
+
+testFindArticleByTitleAndDescription(tests.SearchTests)  Time elapsed: 14.305 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: Cannot find article with title: Java and description: Island of Indonesia
+ (tried for 10 second(s) with 500 milliseconds interval)
+	at tests.SearchTests.testFindArticleByTitleAndDescription_aroundBody8(SearchTests.java:90)
+	at tests.SearchTests.testFindArticleByTitleAndDescription(SearchTests.java:87)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element using By.xpath: //div[contains(@class, 'wikidata-description')][contains(text(), 'Island of Indonesia')]/../div[contains(@class, 'data-title')][contains(text(), 'Java')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'Macbook-Air-2.local', ip: 'fe80:0:0:0:10a2:bd7f:8a2:9972%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_292'
+Driver info: driver.version: unknown
+	at tests.SearchTests.testFindArticleByTitleAndDescription_aroundBody8(SearchTests.java:90)
+	at tests.SearchTests.testFindArticleByTitleAndDescription(SearchTests.java:87)
+

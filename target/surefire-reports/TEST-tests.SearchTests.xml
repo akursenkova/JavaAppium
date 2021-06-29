@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tests.ArticleTests" time="15.274" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tests.SearchTests" time="49.701" tests="5" errors="2" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -17,9 +17,9 @@
     <property name="user.country" value="RU"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib"/>
-    <property name="sun.java.command" value="/Users/akursenkova/Documents/Work/JavaAppium/target/surefire/surefirebooter5313859968523773731.jar /Users/akursenkova/Documents/Work/JavaAppium/target/surefire 2021-06-29T21-00-29_246-jvmRun1 surefire577449922455726023tmp surefire_02618510554839286125tmp"/>
+    <property name="sun.java.command" value="/Users/akursenkova/Documents/Work/JavaAppium/target/surefire/surefirebooter7076843592585121826.jar /Users/akursenkova/Documents/Work/JavaAppium/target/surefire 2021-06-29T21-01-22_403-jvmRun1 surefire4605714905596279608tmp surefire_09162920546645136717tmp"/>
     <property name="http.nonProxyHosts" value="local,, 169.254/16|*.local,, 169.254/16"/>
-    <property name="test" value="ArticleTests"/>
+    <property name="test" value="SearchTests"/>
     <property name="surefire.test.class.path" value="/Users/akursenkova/Documents/Work/JavaAppium/target/test-classes:/Users/akursenkova/Documents/Work/JavaAppium/target/classes:/Users/akursenkova/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/akursenkova/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/akursenkova/.m2/repository/io/appium/java-client/6.1.0/java-client-6.1.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-java/3.12.0/selenium-java-3.12.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.12.0/selenium-chrome-driver-3.12.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.12.0/selenium-edge-driver-3.12.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.12.0/selenium-firefox-driver-3.12.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.12.0/selenium-ie-driver-3.12.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.12.0/selenium-opera-driver-3.12.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.12.0/selenium-safari-driver-3.12.0.jar:/Users/akursenkova/.m2/repository/net/bytebuddy/byte-buddy/1.8.3/byte-buddy-1.8.3.jar:/Users/akursenkova/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/akursenkova/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/akursenkova/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/akursenkova/.m2/repository/com/google/guava/guava/23.6-jre/guava-23.6-jre.jar:/Users/akursenkova/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/akursenkova/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/akursenkova/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/akursenkova/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/akursenkova/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/akursenkova/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/akursenkova/.m2/repository/com/squareup/okhttp3/okhttp/3.9.1/okhttp-3.9.1.jar:/Users/akursenkova/.m2/repository/com/squareup/okio/okio/1.13.0/okio-1.13.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-support/3.12.0/selenium-support-3.12.0.jar:/Users/akursenkova/.m2/repository/org/seleniumhq/selenium/selenium-api/3.12.0/selenium-api-3.12.0.jar:/Users/akursenkova/.m2/repository/com/google/code/gson/gson/2.8.4/gson-2.8.4.jar:/Users/akursenkova/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/Users/akursenkova/.m2/repository/cglib/cglib/3.2.6/cglib-3.2.6.jar:/Users/akursenkova/.m2/repository/org/ow2/asm/asm/6.0/asm-6.0.jar:/Users/akursenkova/.m2/repository/org/apache/ant/ant/1.9.6/ant-1.9.6.jar:/Users/akursenkova/.m2/repository/org/apache/ant/ant-launcher/1.9.6/ant-launcher-1.9.6.jar:/Users/akursenkova/.m2/repository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar:/Users/akursenkova/.m2/repository/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar:/Users/akursenkova/.m2/repository/commons-digester/commons-digester/1.8.1/commons-digester-1.8.1.jar:/Users/akursenkova/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/akursenkova/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/akursenkova/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/akursenkova/.m2/repository/org/springframework/spring-context/5.0.5.RELEASE/spring-context-5.0.5.RELEASE.jar:/Users/akursenkova/.m2/repository/org/springframework/spring-aop/5.0.5.RELEASE/spring-aop-5.0.5.RELEASE.jar:/Users/akursenkova/.m2/repository/org/springframework/spring-beans/5.0.5.RELEASE/spring-beans-5.0.5.RELEASE.jar:/Users/akursenkova/.m2/repository/org/springframework/spring-core/5.0.5.RELEASE/spring-core-5.0.5.RELEASE.jar:/Users/akursenkova/.m2/repository/org/springframework/spring-jcl/5.0.5.RELEASE/spring-jcl-5.0.5.RELEASE.jar:/Users/akursenkova/.m2/repository/org/springframework/spring-expression/5.0.5.RELEASE/spring-expression-5.0.5.RELEASE.jar:/Users/akursenkova/.m2/repository/org/openpnp/opencv/3.2.0-1/opencv-3.2.0-1.jar:/Users/akursenkova/.m2/repository/io/qameta/allure/allure-junit4/2.8.1/allure-junit4-2.8.1.jar:/Users/akursenkova/.m2/repository/io/qameta/allure/allure-java-commons/2.8.1/allure-java-commons-2.8.1.jar:/Users/akursenkova/.m2/repository/io/qameta/allure/allure-model/2.8.1/allure-model-2.8.1.jar:/Users/akursenkova/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.7/jackson-databind-2.9.7.jar:/Users/akursenkova/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar:/Users/akursenkova/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.7/jackson-core-2.9.7.jar:/Users/akursenkova/.m2/repository/org/apache/tika/tika-core/1.19.1/tika-core-1.19.1.jar:/Users/akursenkova/.m2/repository/org/aspectj/aspectjrt/1.9.1/aspectjrt-1.9.1.jar:/Users/akursenkova/.m2/repository/org/jooq/joor-java-8/0.9.9/joor-java-8-0.9.9.jar:/Users/akursenkova/.m2/repository/org/aspectj/aspectjweaver/1.9.5/aspectjweaver-1.9.5.jar:/Users/akursenkova/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/akursenkova/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar:/Users/akursenkova/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="allure.results.directory" value="/Users/akursenkova/Documents/Work/JavaAppium/target/allure-results"/>
@@ -33,7 +33,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/akursenkova/Documents/Work/JavaAppium/target/surefire/surefirebooter5313859968523773731.jar:/Users/akursenkova/.m2/repository/org/aspectj/aspectjweaver/1.9.5/aspectjweaver-1.9.5.jar"/>
+    <property name="surefire.real.class.path" value="/Users/akursenkova/Documents/Work/JavaAppium/target/surefire/surefirebooter7076843592585121826.jar:/Users/akursenkova/.m2/repository/org/aspectj/aspectjweaver/1.9.5/aspectjweaver-1.9.5.jar"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local,, 169.254/16|*.local,, 169.254/16"/>
@@ -63,6 +63,57 @@
     <property name="java.class.version" value="52.0"/>
     <property name="socksNonProxyHosts" value="local,, 169.254/16|*.local,, 169.254/16"/>
   </properties>
-  <testcase name="testSwipeArticle" classname="tests.ArticleTests" time="8.407"/>
-  <testcase name="testArticleCompareTitle" classname="tests.ArticleTests" time="6.42"/>
+  <testcase name="testAmountOfNotEmptySearch" classname="tests.SearchTests" time="21.418">
+    <error message="Expected condition failed: Cannot find anything by the request&#10; (tried for 15 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: 
+Expected condition failed: Cannot find anything by the request
+ (tried for 15 second(s) with 500 milliseconds interval)
+	at tests.SearchTests.testAmountOfNotEmptySearch_aroundBody4(SearchTests.java:58)
+	at tests.SearchTests.testAmountOfNotEmptySearch(SearchTests.java:54)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element using By.cssSelector: ui.page-list>li.page-summary
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'Macbook-Air-2.local', ip: 'fe80:0:0:0:10a2:bd7f:8a2:9972%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_292'
+Driver info: driver.version: unknown
+	at tests.SearchTests.testAmountOfNotEmptySearch_aroundBody4(SearchTests.java:58)
+	at tests.SearchTests.testAmountOfNotEmptySearch(SearchTests.java:54)
+</error>
+    <system-out><![CDATA[Method rotateScreenPortrait() does nothing for platform mobile_web
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 91.0.4472.101 (af52a90bf87030dd1523486a1cd3ae25c5d76c9b-refs/branch-heads/4472@{#1462}) on port 4132
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+июн 29, 2021 9:01:29 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="testAmountOfEmptySearch" classname="tests.SearchTests" time="4.56"/>
+  <testcase name="testCancelSearch" classname="tests.SearchTests" time="4.095"/>
+  <testcase name="testFindArticleByTitleAndDescription" classname="tests.SearchTests" time="14.305">
+    <error message="Expected condition failed: Cannot find article with title: Java and description: Island of Indonesia&#10; (tried for 10 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: 
+Expected condition failed: Cannot find article with title: Java and description: Island of Indonesia
+ (tried for 10 second(s) with 500 milliseconds interval)
+	at tests.SearchTests.testFindArticleByTitleAndDescription_aroundBody8(SearchTests.java:90)
+	at tests.SearchTests.testFindArticleByTitleAndDescription(SearchTests.java:87)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element using By.xpath: //div[contains(@class, 'wikidata-description')][contains(text(), 'Island of Indonesia')]/../div[contains(@class, 'data-title')][contains(text(), 'Java')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'Macbook-Air-2.local', ip: 'fe80:0:0:0:10a2:bd7f:8a2:9972%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_292'
+Driver info: driver.version: unknown
+	at tests.SearchTests.testFindArticleByTitleAndDescription_aroundBody8(SearchTests.java:90)
+	at tests.SearchTests.testFindArticleByTitleAndDescription(SearchTests.java:87)
+</error>
+    <system-out><![CDATA[Method rotateScreenPortrait() does nothing for platform mobile_web
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 91.0.4472.101 (af52a90bf87030dd1523486a1cd3ae25c5d76c9b-refs/branch-heads/4472@{#1462}) on port 33528
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+июн 29, 2021 9:01:57 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="testSearch" classname="tests.SearchTests" time="4.859"/>
 </testsuite>
