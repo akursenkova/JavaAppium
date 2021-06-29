@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.SearchPageObject;
@@ -10,6 +12,10 @@ import org.junit.Test;
 public class SearchTests extends CoreTestCase {
 
     @Test
+    @Feature(value="Search")
+    @DisplayName("Search an article")
+    @Step("Starting test testSearch")
+    @Severity(value = SeverityLevel.CRITICAL)
     public void testSearch() {
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
@@ -20,6 +26,10 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Feature(value="Search")
+    @DisplayName("Cancel search results")
+    @Step("Starting test testCancelSearch")
+    @Severity(value = SeverityLevel.MINOR)
     public void testCancelSearch() {
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
@@ -34,6 +44,11 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Feature(value="Search")
+    @DisplayName("Get amount of not empty search results")
+    @Description("Get amount of search results and compare if it more than 0")
+    @Step("Starting test testAmountOfNotEmptySearch")
+    @Severity(value = SeverityLevel.TRIVIAL)
     public void testAmountOfNotEmptySearch() {
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
@@ -48,6 +63,10 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Feature(value="Search")
+    @DisplayName("Check if search result is empty")
+    @Step("Starting test testAmountOfEmptySearch")
+    @Severity(value = SeverityLevel.TRIVIAL)
     public void testAmountOfEmptySearch() {
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
@@ -59,6 +78,10 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Feature(value="Search")
+    @DisplayName("Find article by title and description")
+    @Step("Starting test testFindArticleByTitleAndDescription")
+    @Severity(value = SeverityLevel.TRIVIAL)
     public void testFindArticleByTitleAndDescription(){
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);

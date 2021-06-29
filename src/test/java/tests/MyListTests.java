@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.*;
@@ -19,6 +21,11 @@ public class MyListTests extends CoreTestCase {
 
 
     @Test
+    @Features(value = {@Feature(value="Search"),@Feature(value="Article"),@Feature(value="My Lists")})
+    @DisplayName("Save article to my list")
+    @Description("Save article to the list and then delete it from list")
+    @Step("Starting test testSaveFirstArticleToList")
+    @Severity(value = SeverityLevel.MINOR)
     public void testSaveFirstArticleToList() throws InterruptedException {
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();

@@ -1,5 +1,6 @@
 package lib.ui;
 
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -31,6 +32,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         super(driver);
     }
 
+    @Step("Open folder by name: {name_of_folder}")
     public void openFolderByName(String name_of_folder){
         String folder_name_xpath = getFolderXpathByName(name_of_folder);
         this.waitForElementPresent(
@@ -46,12 +48,14 @@ abstract public class MyListsPageObject extends MainPageObject{
         );
     }
 
+    @Step("Close alert in screen with my saved articles")
     public void closeAlertSyncArticles(){
         if (Platform.getInstance().isIOS()){
             this.waitForElementAndClick(CLOSE_ALERT_BUTTON, "Cannot find and click close alert button", 5);
         }
     }
 
+    @Step("Delete article from the list of saved articles")
     public void swipeByArticleToDelete(String article_title){
         this.waitForArticleToAppear(article_title);
         String article_xpath = getSavedArticleXpathByTitle(article_title);
@@ -81,6 +85,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         this.waitForArticleToDisappear(article_title);
     }
 
+    @Step("Waiting for article to disappear from saved articles list")
     public void waitForArticleToDisappear(String article_title){
         String article_xpath = getSavedArticleXpathByTitle(article_title);
         this.waitForElementNotPresent(
@@ -90,6 +95,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting for article to appear in saved articles list")
     public void waitForArticleToAppear(String article_title){
         String article_xpath = getSavedArticleXpathByTitle(article_title);
         this.waitForElementPresent(
@@ -99,6 +105,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         );
     }
 
+    @Step("Find article by title and click it")
     public void clickArticleByTitle(String article_title){
         String article_xpath = getSavedArticleXpathByTitle(article_title);
         waitForElementPresent(
@@ -115,6 +122,7 @@ abstract public class MyListsPageObject extends MainPageObject{
 
     }
 
+    @Step("Compare if article title equals expected title")
     public void compareArticleTitle(String article_title){
 
         WebElement title_element = waitForElementPresent(
@@ -132,6 +140,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         );
     }
 
+    @Step("Open article '{article_title} and compare it's title with expected one'")
     public void clickArticleAndCompareTitle(String article_title){
         clickArticleByTitle(article_title);
         compareArticleTitle(article_title);

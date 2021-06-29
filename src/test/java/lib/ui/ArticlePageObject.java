@@ -1,5 +1,6 @@
 package lib.ui;
 
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -38,12 +39,15 @@ abstract public class ArticlePageObject extends MainPageObject{
         super(driver);
     }
 
+    @Step("Waiting for the title on the article page")
     public WebElement waitForTitleElement(){
         return this.waitForElementPresent(TITLE, "Cannot find article title on page", 15);
     }
 
+    @Step("Get article title")
     public String getArticleTitle(){
         WebElement title_element = waitForTitleElement();
+        screenshot(this.takeScreenshot("article_title"));
         if (Platform.getInstance().isAndroid()){
             return title_element.getAttribute("text");
         } else if (Platform.getInstance().isIOS()) {
@@ -53,6 +57,7 @@ abstract public class ArticlePageObject extends MainPageObject{
         }
     }
 
+    @Step("Swiping to the footer on the article page")
     public void swipeToFooter(){
         if (Platform.getInstance().isAndroid()){
             this.swipeUpToFindElement(FOOTER_ELEMENT, "Cannot find the end of article", 40);
@@ -63,6 +68,7 @@ abstract public class ArticlePageObject extends MainPageObject{
         }
     }
 
+    @Step("Adding article to my list (only for android)")
     public void addArticleToMyList(String name_of_folder){
         this.waitForElementPresent(
                 OPTIONS_BUTTON,
@@ -119,6 +125,7 @@ abstract public class ArticlePageObject extends MainPageObject{
         );
     }
 
+    @Step("Adding article to my saved list (only for ios and mobile web)")
     public void addArticleToMySaved() throws InterruptedException{
         if (Platform.getInstance().isMW()){
             this.removeArticleFromSaved();
@@ -128,6 +135,7 @@ abstract public class ArticlePageObject extends MainPageObject{
         this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST, "Cannot find option to add article to my list", 10);
     }
 
+    @Step("Removing article from saved if it has been added")
     public void removeArticleFromSaved(){
         if (this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)){
             this.waitForElementAndClick(
@@ -142,6 +150,7 @@ abstract public class ArticlePageObject extends MainPageObject{
         }
     }
 
+    @Step("Closing article")
     public void closeArticle(){
         this.waitForElementAndClick(
                 CLOSE_ARTICLE_BUTTON,
@@ -150,6 +159,7 @@ abstract public class ArticlePageObject extends MainPageObject{
         );
     }
 
+    @Step("Adding article to existing list of saved articles")
     public void addArticleToExistingList(String name_of_folder){
         this.waitForElementPresent(
                 OPTIONS_BUTTON,
@@ -188,6 +198,7 @@ abstract public class ArticlePageObject extends MainPageObject{
         );
     }
 
+    @Step("Making sure if article title is present")
     public void assertTitlePresent(){
         By title = this.getLocatorByString(TITLE);
         List elements = driver.findElements(title);

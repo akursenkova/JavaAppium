@@ -1,3 +1,5 @@
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.*;
@@ -17,6 +19,11 @@ public class HomeWork extends CoreTestCase {
 
     //Ex 2
     @Test
+    @Feature(value="Search")
+    @DisplayName("Check if search input is present")
+    @Description("If search input contains some text it present on the screen")
+    @Step("Starting test testSearchInputContainsText")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testSearchInputContainsText(){
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
@@ -27,6 +34,11 @@ public class HomeWork extends CoreTestCase {
 
     //Ex 3
     @Test
+    @Feature(value="Search")
+    @DisplayName("Clear search input")
+    @Description("Type text in the search input and make sure text is disappear after cleaning input")
+    @Step("Starting test testClearSearchInput")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testClearSearchInput(){
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
@@ -40,6 +52,10 @@ public class HomeWork extends CoreTestCase {
 
     //Ex 4
     @Test
+    @Feature(value="Search")
+    @DisplayName("Every search result contains searched text")
+    @Step("Starting test testSearchResultsContainText")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testSearchResultsContainText(){
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
@@ -53,6 +69,11 @@ public class HomeWork extends CoreTestCase {
 
     //Ex 5. Added adaptation for iOS and mobile web
     @Test
+    @Features(value = {@Feature(value="Search"),@Feature(value="Article"),@Feature(value="My Lists")})
+    @DisplayName("Save two articles to my list")
+    @Description("Save two articles to the list and then delete one of them from list")
+    @Step("Starting test testSaveArticlesToList")
+    @Severity(value = SeverityLevel.MINOR)
     public void testSaveArticlesToList() throws InterruptedException {
 
         String first_article = "Object-oriented programming language";
@@ -128,6 +149,8 @@ public class HomeWork extends CoreTestCase {
         }
 
         MyListsPageObject.swipeByArticleToDelete(first_article_title);
+
+        ArticlePageObject.takeScreenshot("saved_articles");
 
         if (Platform.getInstance().isAndroid()){
             MyListsPageObject.clickArticleAndCompareTitle(second_article_title);
